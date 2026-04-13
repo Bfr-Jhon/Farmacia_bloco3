@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ClipLoader } from "react-spinners";
+
 import type Categoria from "../../../models/Categoria";
 import { buscar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
@@ -49,7 +49,7 @@ function ListaCategorias() {
 
         {isLoading && (
           <div className="flex justify-center py-16">
-            <ClipLoader color="#50FA7B" size={36} />
+            
           </div>
         )}
 

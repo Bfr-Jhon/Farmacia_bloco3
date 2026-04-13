@@ -1,6 +1,6 @@
 import { useEffect, useState, type ChangeEvent, type SyntheticEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ClipLoader } from "react-spinners";
+
 import type Categoria from "../../../models/Categoria";
 import { buscar, cadastrar, atualizar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
@@ -96,22 +96,7 @@ function FormCategoria() {
               />
             </div>
 
-            {/* Descrição
-            <div className="flex flex-col gap-1">
-              <label className="text-xs font-medium" style={{ color: "#50FA7B" }}>
-                Descrição
-              </label>
-              <textarea
-                name="descricao"
-                placeholder="Descreva esta categoria..."
-                className="px-4 py-2 rounded-lg text-sm w-full focus:outline-none resize-none"
-                style={{ backgroundColor: "#282A36", border: "1px solid #6272A4", color: "#F8F8F2" }}
-                rows={4}
-                value={categoria.descricao}
-                onChange={atualizarEstado}
-                required
-              />
-            </div> */}
+            
 
             {/* Botões */}
             <div className="flex gap-4 pt-2">
@@ -133,7 +118,7 @@ function FormCategoria() {
                 onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
                 disabled={isLoading}
               >
-                {isLoading ? <ClipLoader color="#282A36" size={20} /> : isEdicao ? "Salvar" : "Cadastrar"}
+                {isLoading ? "Salvando..." : isEdicao ? "Salvar" : "Cadastrar"}
               </button>
             </div>
           </form>

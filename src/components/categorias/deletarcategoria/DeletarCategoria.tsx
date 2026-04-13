@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ClipLoader } from "react-spinners";
+
 import type Categoria from "../../../models/Categoria";
 import { buscar, deletar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
@@ -13,7 +13,6 @@ function DeletarCategoria() {
   const [categoria, setCategoria] = useState<Categoria>({
     id: 0,
     nome: "",
-    descricao: "",
   });
 
   useEffect(() => {
@@ -71,9 +70,7 @@ function DeletarCategoria() {
             <p className="text-sm font-semibold" style={{ color: "#F8F8F2" }}>
               {categoria.nome}
             </p>
-            <p className="text-xs" style={{ color: "#6272A4" }}>
-              {categoria.descricao}
-            </p>
+         
           </div>
 
           <p className="text-xs text-center" style={{ color: "#FF5555" }}>
@@ -98,7 +95,7 @@ function DeletarCategoria() {
               onClick={handleDeletar}
               disabled={isLoading}
             >
-              {isLoading ? <ClipLoader color="#F8F8F2" size={20} /> : "Deletar"}
+              {isLoading ? "Deletando..." : "Deletar"}
             </button>
           </div>
         </div>
